@@ -49,7 +49,7 @@ A Telegram bot consists on an automatized software ready to respond according to
 
 
 ## 2. Roadmap <a name="2"></a>
-SuperHolbie is in an early state of development. In this sense, it is planned to develop the following features:
+SuperHolbie is in early state of development. In this sense, it is planned to develop the following features:
 * Inline bot mode implementation.
 * Webhook implementation.
 * Commands which allow to retrieve personal information from the Checker API. 
