@@ -12,7 +12,7 @@ INPUT_TEXT = 0
 
 def start(update, context):
     """start command"""
-    update.message.reply_text('Hey, holbie! So stressful, huh? 😀\nDon\'t worry. Here I am to help you to retrieve some useful information from the Holberton Checker API.\n\nAvailable commands at the moment:\n\n/project - retrieves useful information about any project')
+    update.message.reply_text('Hey, holbie! So stressful, huh? 😀\nDon\'t worry. Here I am to help you retrieve useful information from the Holberton School Checker API.\n\nAvailable commands at the moment:\n\n/project - retrieves information about any project: name, tasks, GitHub directory and GitHub repository')
 
 
 def project(update, context):
@@ -59,15 +59,15 @@ def input_text(update, context):
             chat.send_message('Task {}- {}'.format(tasknumber, tasktitle))
             tasknumber = tasknumber + 1
         if (item.get('github_dir') != ""):
-            chat.send_message('Github directory: {}'.
+            chat.send_message('GitHub directory: {}'.
                               format(item.get('github_dir')))
         else:
-            chat.send_message('Github directory: No directory')
+            chat.send_message('GitHub directory: No directory')
         if (item.get('github_repo') != ""):
-            chat.send_message('Github repository: {}'.
+            chat.send_message('GitHub repository: {}'.
                               format(item.get('github_repo')))
         else:
-            chat.send_message('Github repository: No repository')
+            chat.send_message('GitHub repository: No repository')
         return ConversationHandler.END
 
 
