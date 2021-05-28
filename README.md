@@ -19,10 +19,10 @@ It has been entirely developed and written in Linux system and Python language a
 ### i. Devs <a name="11"></a>
 In order to run and use the bot from the point of view of devs, it is so simple as:
 
-**First**. Clone this repository in a Linux environment: https://github.com/nicolasportela/Telegram-Bot.git.\
+**First**. Clone this repository in a Linux environment: https://github.com/nicolasportela/Telegram-Bot.git. \
 **Second**. Install the python-telegram-bot library: `pip install python-telegram-bot`\
 **Third**. Run its main file (bot\.py) from the command line as any Python or executable file: `python3 bot.py` or `./bot.py`, respectively (to stop it, run Ctrl+C).\
-**Fourth**. Open a chat with [SuperHolbie](t.me/SuperHolbieBot) in Telegram and start to use it pressing "start" button.
+**Fourth**. Open a chat with SuperHolbie in Telegram and start to use it pressing "start" button: t.me/SuperHolbieBot
 
 \
 **Before starting, you must consider:** 
@@ -33,7 +33,7 @@ In order to run and use the bot from the point of view of devs, it is so simple 
 ### ii. Users <a name="12"></a>
 From the point of view of users, you will need a Telegram account to use it and then, it is so simple as:
 
-**First.** Open a chat with [SuperHolbie](t.me/SuperHolbieBot) in Telegram.\
+**First.** Open a chat with SuperHolbie in Telegram: t.me/SuperHolbieBot.\
 **Second.** Press "start" button to start to use it.
 
 ### iii. Usage <a name="13"></a>
