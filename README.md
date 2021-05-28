@@ -22,7 +22,7 @@ In order to run and use the bot from the point of view of devs, it is so simple 
 **First**. Clone this repository in a Linux environment: https://github.com/nicolasportela/Telegram-Bot.git. \
 **Second**. Install the python-telegram-bot library: `pip install python-telegram-bot`\
 **Third**. Run its main file (bot\.py) from the command line as any Python or executable file: `python3 bot.py` or `./bot.py`, respectively (to stop it, run Ctrl+C).\
-**Fourth**. Open a chat with SuperHolbie in Telegram and start to use it pressing "start" button: t.me/SuperHolbieBot
+**Fourth**. Open a chat with [SuperHolbie](http://t.me/SuperHolbieBot) in Telegram and start to use it pressing "start" button.
 
 \
 **Before starting, you must consider:** 
@@ -33,14 +33,14 @@ In order to run and use the bot from the point of view of devs, it is so simple 
 ### ii. Users <a name="12"></a>
 From the point of view of users, you will need a Telegram account to use it and then, it is so simple as:
 
-**First.** Open a chat with SuperHolbie in Telegram: t.me/SuperHolbieBot.\
+**First.** Open a chat with [SuperHolbie](http://t.me/SuperHolbieBot) in Telegram.\
 **Second.** Press "start" button to start to use it.
 
 ### iii. Usage <a name="13"></a>
 A Telegram bot consists on an automatized software ready to respond according to commands, messages and requests entered by users or other automatized processes. In this sense, SuperHolbie is able to respond to the following commands at the moment:
 
 * `/start`: Shows a welcome message and describes available commands
-* `/project`: Retrieves information about any Holberton School program project: name, tasks, GitHub directory and GitHub repository
+* `/project`: Receives a Holberton School project's ID (integer number) as input from user and retrieves information about that project: name, tasks, GitHub directory and GitHub repository. It alerts if the ID entered is not valid and asks for a new one.
 
 ### iv. Examples <a name="14"></a>
 
