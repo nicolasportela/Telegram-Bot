@@ -16,12 +16,12 @@ It has been entirely developed and written in Linux system and Python language a
 
 ## 1. Installation and Usage <a name="1"></a>
 
-### Devs <a name="11"></a>
+### i. Devs <a name="11"></a>
 In order to run and use the bot from the point of view of devs, it is so simple as:
 
-**First**. Clone this repository in a Linux environment: https://github.com/nicolasportela/Telegram-Bot.git.
-**Second**. Install the python-telegram-bot library: `pip install python-telegram-bot`
-**Third**. Run its main file (bot\.py) from the command line as any Python or executable file: `python3 bot.py` or `./bot.py`, respectively (to stop it, run Ctrl+C).
+**First**. Clone this repository in a Linux environment: https://github.com/nicolasportela/Telegram-Bot.git.\
+**Second**. Install the python-telegram-bot library: `pip install python-telegram-bot`\
+**Third**. Run its main file (bot\.py) from the command line as any Python or executable file: `python3 bot.py` or `./bot.py`, respectively (to stop it, run Ctrl+C).\
 **Fourth**. Open a chat with [SuperHolbie](t.me/SuperHolbieBot) in Telegram and start to use it pressing "start" button.
 
 \
@@ -30,34 +30,34 @@ In order to run and use the bot from the point of view of devs, it is so simple 
 * You need to ask for your own Telegram bot token: [here instructions](https://core.telegram.org/bots#creating-a-new-bot). It is represented in the source code by the environment variable named TGTOKEN.
 * "Procfile" and "requirements.txt" are files required by Heroku to deployment. You won't need them if you won't deploy your bot or if you will do it using other services.
 
-### Users <a name="12"></a>
+### ii. Users <a name="12"></a>
 From the point of view of users, you will need a Telegram account to use it and then, it is so simple as:
 
-**First.** Open a chat with [SuperHolbie](t.me/SuperHolbieBot) in Telegram.
+**First.** Open a chat with [SuperHolbie](t.me/SuperHolbieBot) in Telegram.\
 **Second.** Press "start" button to start to use it.
 
-### Usage <a name="13"></a>
+### iii. Usage <a name="13"></a>
 A Telegram bot consists on an automatized software ready to respond according to commands, messages and requests entered by users or other automatized processes. In this sense, SuperHolbie is able to respond to the following commands at the moment:
 
 * `/start`: Shows a welcome message and describes available commands
 * `/project`: Retrieves information about any Holberton School program project: name, tasks, GitHub directory and GitHub repository
 
-### Examples <a name="14"></a>
+### iv. Examples <a name="14"></a>
 
 
-### Demo <a name="15"></a>
+### v. Demo <a name="15"></a>
 
 
-## 2. Roadmap
+## 2. Roadmap <a name="2"></a>
 SuperHolbie is in an early state of development. In this sense, it is planned to develop the following features:
 * Inline bot mode implementation.
 * Webhook implementation.
 * Commands which allow to retrieve personal information from the Checker API. 
 
-## 3. Author and Contributors
+## 3. Author and Contributors <a name="3"></a>
 * Author: [Nicolás Portela](https://github.com/nicolasportela)
 
-## 4. Documentation
+## 4. Documentation <a name="4"></a>
 * [Telegram Bots](https://core.telegram.org/bots)
 * [Telegram Bot API](https://core.telegram.org/bots/api)
 * [python-telegram-bot library](https://python-telegram-bot.org)
