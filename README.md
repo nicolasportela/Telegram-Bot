@@ -44,12 +44,13 @@ A Telegram bot consists on an automatized software ready to respond according to
 
 ### iv. Examples <a name="14"></a>
 
+![SuperHolbie screenshots](https://lh3.googleusercontent.com/pVCm7r1ne9t7SiKSv7zMgLZwMIWaElTrl8kyv5KPdXydcJ3mS-gzc6l_qS8O6kDxNvl0EOIfvzNIlL8qLdE_LCvx2N7vXZQa6DyWxL_DsaZ6IX92ILMqau1sF47CVnsdrj5oSe1qIBrSMnLu2LpHZEgr-TiOO4Ht4V_dLpmxGdrsYy1wbG5HBGytqTiRNKKSLujPxcUeZeeganzbo-GCi5n5e2cJO-AnA80CTnutPGMhEIq-rc6PhVRnSrsrABZSA0h0oiQZs7TB0r_lWEVPdkSbSoHs4yxEfrdmxepvTh6x_le9w4DLdmqfulIAVHWmXRzbOo5SCOqYm89uazLcbNRq_q59cxS_iMu7C5897IEXnHyqbI0M-inEGXsQEfOX6__hIXoMNfLXxKGeQiKxXSJHWJB2d6Eyj5jW7DTpAYhqrvz2Dx_CvZ__0egK9dd4FH__LInWnVS5YfdQWCEzDsR3vpTM9kQ7LHA67_bVTtaWMu8T83sgv1x5vOvAr_HD6cUuRn6PFQiu-8741RgiuC0Y4-s8UGSwenWxy9RR1uwLiycGrl1Wqn6B1gDVFuvHnpNlIM9AJB3wqjEl8S0XecBTnanSnZ9Y_rBF3sZ7hbTJT7s3pdlPkez-nXtoIP5TWsGq9QdhDR77g6P1y4-4NBxoOdQ8kNLxb14XmP-n7nBSS-_BgoTWvHHN-Str50Lp4rwTNIxz0iQQqzZ_Imu12Zw=w1154-h923-no?authuser=1)
 
 ### v. Demo <a name="15"></a>
 
 
 ## 2. Roadmap <a name="2"></a>
-SuperHolbie is in early state of development. In this sense, it is planned to develop the following features:
+SuperHolbie is in early stage of development. In this sense, it is planned to develop the following features:
 * Ability to receive undefined number of arguments.
 * Inline bot mode implementation.
 * Webhook implementation.
