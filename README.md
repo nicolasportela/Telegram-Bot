@@ -26,7 +26,7 @@ In order to run and use the bot from the point of view of devs, it is so simple 
 
 \
 **Before starting, you must consider:** 
-* You need to be a Holberton School student in order to get some keys required to retrieve information from its API, represented in the source code by environment variables: HBTNAPIKEY (Holberton API key), HBTNEMAIL (Holberton account e-mail), HBTNPASSWORD (Holberton account password).
+* You need to be a Holberton School member in order to get some keys required to retrieve information from its API, represented in the source code by environment variables: HBTNAPIKEY (Holberton API key), HBTNEMAIL (Holberton account e-mail), HBTNPASSWORD (Holberton account password).
 * You need to ask for your own Telegram bot token: [here instructions](https://core.telegram.org/bots#creating-a-new-bot). It is represented in the source code by the environment variable named TGTOKEN.
 * "Procfile" and "requirements.txt" are files required by Heroku to deployment. You won't need them if you won't deploy your bot or if you will do it using other services.
 
