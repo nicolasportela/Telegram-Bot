@@ -31,7 +31,7 @@ In order to run and use the bot from the point of view of devs, it is so simple 
 * "Procfile" and "requirements.txt" are files required by Heroku to deployment. You won't need them if you won't deploy your bot or if you will do it using other services.
 
 ### ii. Users <a name="12"></a>
-From the point of view of users, you will need a Telegram account to use it and then, it is so simple as:
+From the point of view of users, you will need a Telegram account and then, it is so simple as:
 
 **First.** Open a chat with [SuperHolbie](http://t.me/SuperHolbieBot) in Telegram.\
 **Second.** Press "start" button to start to use it.
