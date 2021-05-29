@@ -12,7 +12,7 @@ INPUT_TEXT = 0
 
 def start(update, context):
     """start command"""
-    update.message.reply_text('Hey, holbie! So stressful, huh? 😀\nDon\'t worry. Here I am to help you retrieve useful information from the Holberton School Checker API.\n\nAvailable commands at the moment:\n\n/project - retrieves information about any project: name, tasks, GitHub directory and GitHub repository')
+    update.message.reply_text('Hey, holbie! So stressful, huh? 😀\nDon\'t worry. Here I am to help you retrieve useful information from the Holberton School Checker API.\n\nAvailable commands at the moment:\n\n/project - retrieves information about any project: name, mandatory tasks, GitHub directory and GitHub repository')
 
 
 def project(update, context):
@@ -43,9 +43,10 @@ def input_text(update, context):
         chat = update.message.chat
         if text == "end" or text == "End" or text == "END" or text == "EnD" \
            or text == "eND" or text == "ENd" or text == "eNd" or text == "enD":
+            chat.send_message('See you soon, holbie')
             return ConversationHandler.END
         else:
-            chat.send_message('No project found, holbie. Please, enter a correct ID or tell me "end" to end conversation.')
+            chat.send_message('No project found. Please, enter a correct ID or tell me "end" to end conversation.')
     else:
         dic = r2.json()
         name = dic.get('name')
@@ -84,7 +85,6 @@ if __name__ == '__main__':
         states={INPUT_TEXT: [MessageHandler(Filters.text, input_text)]},
         fallbacks=[]
     ))
-
 
     updater.start_polling()
     updater.idle()
