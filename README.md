@@ -22,7 +22,7 @@ In order to run locally and start using the bot from the point of view of devs, 
 **First**. Clone this repository in a Linux environment: https://github.com/nicolasportela/Telegram-Bot.git. \
 **Second**. Install the python-telegram-bot library: `pip install python-telegram-bot`\
 **Third**. Run its main file (bot\.py) from the command line as any Python or executable file: `python3 bot.py` or `./bot.py`, respectively (to stop it, run Ctrl+C).\
-**Fourth**. Open a chat with [SuperHolbie](http://t.me/SuperHolbieBot) in Telegram and press "start" button to start to use it while it is still running.
+**Fourth**. While running, open a chat with [SuperHolbie](http://t.me/SuperHolbieBot) in Telegram and press "start" button to start to use it.
 
 \
 **Before starting, you must consider:** 
