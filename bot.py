@@ -53,8 +53,7 @@ def input_text(update, context):
         chat = update.message.chat
         chat.send_message('Project\'s name: {}'.format(name))
         tasks = dic.get('tasks')
-        numbertasks = tasks[-1].get('position')
-        chat.send_message('Number of tasks (mandatory + advanced): {}'.format(numbertasks))
+        chat.send_message('Number of tasks (mandatory + advanced): {}'.format(len(tasks)))
         tasktitle = []
         tasknumber = 0
         for item in tasks:
