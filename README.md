@@ -17,21 +17,21 @@ It has been entirely developed and written in Linux system and Python language a
 ## 1. Installation and Usage <a name="1"></a>
 
 ### i. Devs <a name="11"></a>
-In order to run and use the bot from the point of view of devs, it is so simple as:
+In order to run locally and start using the bot from the point of view of devs, it is so simple as:
 
 **First**. Clone this repository in a Linux environment: https://github.com/nicolasportela/Telegram-Bot.git. \
 **Second**. Install the python-telegram-bot library: `pip install python-telegram-bot`\
 **Third**. Run its main file (bot\.py) from the command line as any Python or executable file: `python3 bot.py` or `./bot.py`, respectively (to stop it, run Ctrl+C).\
-**Fourth**. Open a chat with [SuperHolbie](http://t.me/SuperHolbieBot) in Telegram and start to use it pressing "start" button.
+**Fourth**. Open a chat with [SuperHolbie](http://t.me/SuperHolbieBot) in Telegram and press "start" button to start to use it while it is still running.
 
 \
 **Before starting, you must consider:** 
 * You need to be a Holberton School member in order to get some keys required to retrieve information from its API, represented in the source code by environment variables: HBTNAPIKEY (Holberton API key), HBTNEMAIL (Holberton account e-mail), HBTNPASSWORD (Holberton account password).
-* You need to ask for your own Telegram bot token: [here instructions](https://core.telegram.org/bots#creating-a-new-bot). It is represented in the source code by the environment variable named TGTOKEN.
+* You need to ask for your own Telegram bot token: [instructions here](https://core.telegram.org/bots#creating-a-new-bot). It is represented in the source code by the environment variable named TGTOKEN.
 * "Procfile" and "requirements.txt" are files required by Heroku to deployment. You won't need them if you won't deploy your bot or if you will do it using other services.
 
 ### ii. Users <a name="12"></a>
-From the point of view of users, you will need a Telegram account and then, it is so simple as:
+In order to start using the bot from the point of view of users, you will need a Telegram account and then, it is so simple as:
 
 **First.** Open a chat with [SuperHolbie](http://t.me/SuperHolbieBot) in Telegram.\
 **Second.** Press "start" button to start to use it.
