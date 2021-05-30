@@ -40,7 +40,7 @@ In order to start using the bot from the point of view of users, you will need a
 A Telegram bot consists on an automatized software ready to respond according to commands, messages and requests entered by users or other automatized processes. In this sense, SuperHolbie is able to respond to the following commands at the moment:
 
 * `/start`: Shows a welcome message and describes available commands
-* `/project`: Receives a Holberton School project's ID (integer number) as input from user and retrieves information about that project: name, mandatory tasks, GitHub directory and GitHub repository. It alerts if the ID entered is not valid and asks for a new one.
+* `/project`: Receives a Holberton School project's ID (integer number) as input from user and retrieves information about that project: name, tasks, GitHub directory and GitHub repository. It alerts if the ID entered is not valid and asks for a new one.
 
 ### iv. Examples <a name="14"></a>
 

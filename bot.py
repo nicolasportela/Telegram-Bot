@@ -12,7 +12,7 @@ INPUT_TEXT = 0
 
 def start(update, context):
     """start command"""
-    update.message.reply_text('Hey, holbie! So stressful, huh? 😀\nDon\'t worry. Here I am to help you retrieve useful information from the Holberton School Checker API.\n\nAvailable commands at the moment:\n\n/project - retrieves information about any project: name, mandatory tasks, GitHub directory and GitHub repository')
+    update.message.reply_text('Hey, holbie! So stressful, huh? 😀\nDon\'t worry. Here I am to help you retrieve useful information from the Holberton School Checker API.\n\nAvailable commands at the moment:\n\n/project - retrieves information about any project: name, tasks, GitHub directory and GitHub repository')
 
 
 def project(update, context):
@@ -53,6 +53,8 @@ def input_text(update, context):
         chat = update.message.chat
         chat.send_message('Project\'s name: {}'.format(name))
         tasks = dic.get('tasks')
+        numbertasks = tasks[-1].get('position')
+        chat.send_message('Number of tasks (mandatory + advanced): {}'.format(numbertasks))
         tasktitle = []
         tasknumber = 0
         for item in tasks:
