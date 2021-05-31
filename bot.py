@@ -72,7 +72,7 @@ def input_text(update, context):
             chat.send_message('GitHub repository: {}'.format(projrepo))
         else:
             chat.send_message('GitHub repository: No repository')
-        chat.send_message('Would you like to get extra info about some of those tasks?\nIf yes, tell me a task\'s ID number (available above); otherwise, tell me "end" to end conversation.')
+        chat.send_message('Would you like to get extra info about some of those tasks?\nIf so, tell me a task\'s ID number (available above); otherwise, tell me "end" to end conversation.')
         if text == "end" or text == "End" or text == "END" or text == "EnD" \
            or text == "eND" or text == "ENd" or text == "eNd" or text == "enD":
             chat.send_message('See you soon, holbie')
@@ -146,7 +146,7 @@ def input_text2(update, context):
                 chat2.send_message('GitHub repository: {}'.format(taskrepo))
             else:
                 chat2.send_message('GitHub repository: No repository')
-            chat2.send_message('Any other task?\nIf yes, tell me its ID number (available above); otherwise, tell me "end" to end conversation.')
+            chat2.send_message('Any other task?\nIf so, tell me its ID number (available above); otherwise, tell me "end" to end conversation.')
 
 
 if __name__ == '__main__':
