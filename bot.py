@@ -12,7 +12,7 @@ INPUT_TEXT = 0
 
 def start(update, context):
     """start command"""
-    update.message.reply_text('Hey, holbie! So stressful, huh? 😀\nDon\'t worry. Here I am to help you retrieve useful information from the Holberton School Checker API.\n\nAvailable commands at the moment:\n\n/project - retrieves information about any project: name, tasks, GitHub directory and GitHub repository')
+    update.message.reply_text('Hey, holbie! So stressful, huh? 😀\nDon\'t worry. Here I am to help you retrieve useful information from the Holberton School Checker API.\n\nAvailable commands at the moment:\n\n/project - retrieves information about any project: name, tasks, GitHub directory and GitHub repository. Optionally, it is possible to get extra information about any of that project tasks: Checker availability and GitHub file.')
 
 
 def project(update, context):
@@ -24,6 +24,7 @@ def project(update, context):
 def input_text(update, context):
     """function to take text given by the user and send feedback"""
     text = update.message.text
+    chat = update.message.chat
     header = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64)'}
 
     url = 'https://intranet.hbtn.io/users/auth_token.json'
@@ -40,7 +41,6 @@ def input_text(update, context):
                       allow_redirects=False,
                       headers=header)
     if r2.status_code != 200:
-        chat = update.message.chat
         if text == "end" or text == "End" or text == "END" or text == "EnD" \
            or text == "eND" or text == "ENd" or text == "eNd" or text == "enD":
             chat.send_message('See you soon, holbie')
@@ -49,28 +49,80 @@ def input_text(update, context):
             chat.send_message('No project found. Please, enter a correct ID or tell me "end" to end conversation.')
     else:
         dic = r2.json()
-        name = dic.get('name')
-        chat = update.message.chat
-        chat.send_message('Project\'s name: {}'.format(name))
+        projname = dic.get('name')
+        chat.send_message('Project\'s name: {}'.format(projname))
         tasks = dic.get('tasks')
-        chat.send_message('Number of tasks (mandatory + advanced): {}'.format(len(tasks)))
-        tasktitle = []
+        chat.send_message('Number of tasks (mandatory + advanced): {}'
+                          .format(len(tasks)))
         tasknumber = 0
         for item in tasks:
             tasktitle = item.get('title')
-            chat.send_message('Task {}- {}'.format(tasknumber, tasktitle))
+            taskid = item.get('id')
+            chat.send_message('Task {}- {}\n(ID number: {})'.
+                              format(tasknumber, tasktitle, taskid))
             tasknumber = tasknumber + 1
-        if (item.get('github_dir') != ""):
-            chat.send_message('GitHub directory: {}'.
-                              format(item.get('github_dir')))
+        projdir = item.get('github_dir')
+        if projdir != "":
+            chat.send_message('GitHub directory: {}'.format(projdir))
         else:
             chat.send_message('GitHub directory: No directory')
-        if (item.get('github_repo') != ""):
-            chat.send_message('GitHub repository: {}'.
-                              format(item.get('github_repo')))
+        projrepo = item.get('github_repo')
+        if projrepo != "":
+            chat.send_message('GitHub repository: {}'.format(projrepo))
         else:
             chat.send_message('GitHub repository: No repository')
-        return ConversationHandler.END
+        chat.send_message('Would you like to get extra info about some of those tasks? If yes, tell me its ID number (available above); otherwise, tell me "end" to end conversation.')
+        if text == "end" or text == "End" or text == "END" or text == "EnD" \
+           or text == "eND" or text == "ENd" or text == "eNd" or text == "enD":
+            chat.send_message('See you soon, holbie')
+            return ConversationHandler.END
+        else:
+            url3 = 'https://intranet.hbtn.io/tasks/{}.json?auth_token={}'
+            r3 = requests.get(url3.format(text, token),
+                              allow_redirects=False,
+                              headers=header)
+            if r3.status_code != 200:
+                if text == "end" or text == "End" or text == "END" \
+                   or text == "EnD" or text == "eND" or text == "ENd" \
+                   or text == "eNd" or text == "enD":
+                    chat.send_message('See you soon, holbie')
+                    return ConversationHandler.END
+                else:
+                    chat.send_message('No task found. Please, enter a correct ID or tell me "end" to end conversation.')
+            else:
+                dic2 = r3.json()
+                tasktitle2 = dic2.get('title')
+                chat.send_message('Task\'s name: {}'.format(tasktitle2))
+                taskchecker = dic2.get('checker_available')
+                if taskchecker == 'true':
+                    chat.send_message('Correction mode: Checker')
+                else:
+                    chat.send_message('Correction mode: manual review')
+                url4 = 'https://intranet.hbtn.io/projects/{}.\
+                       json?auth_token={}'
+                projid = dic2.get('project_id')
+                r4 = requests.get(url4.format(projid, token),
+                                  allow_redirects=False,
+                                  headers=header).json()
+                projname2 = r4.get('name')
+                chat.send_message('Project\'s name: {}'.format(projname2))
+                taskfile = dic2.get('github_file')
+                if taskfile != "":
+                    chat.send_message('GitHub file: {}'.format(taskfile))
+                else:
+                    chat.send_message('GitHub file: No file')
+                taskdir = dic2.get('github_dir')
+                if taskdir != "":
+                    chat.send_message('GitHub directory: {}'.format(taskdir))
+                else:
+                    chat.send_message('GitHub directory: No directory')
+                taskrepo = dic2.get('github_repo')
+                if taskrepo != "":
+                    chat.send_message('GitHub repository: {}'.
+                                      format(taskrepo))
+                else:
+                    chat.send_message('GitHub repository: No repository')
+                return ConversationHandler.END
 
 
 if __name__ == '__main__':
