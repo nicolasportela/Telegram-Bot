@@ -28,7 +28,7 @@ In order to run locally and start using the bot from the point of view of devs, 
 **Before starting, you must consider:** 
 * You need to be a Holberton School member in order to get some keys required to retrieve information from its API, represented in the source code by environment variables: HBTNAPIKEY (Holberton API key), HBTNEMAIL (Holberton account e-mail), HBTNPASSWORD (Holberton account password).
 * You need to ask for your own Telegram bot token: [instructions here](https://core.telegram.org/bots#creating-a-new-bot). It is represented in the source code by the environment variable named TGTOKEN.
-* "Procfile" and "requirements.txt" are files required by Heroku to deployment. You won't need them if you won't deploy your bot or if you will do it using other services.
+* "Procfile" and "requirements.txt" are files required by Heroku to deployment. You may not need them if you won't deploy your bot or if you will do it using other services.
 
 ### ii. Users <a name="12"></a>
 In order to start using the bot from the point of view of users, you will need a Telegram account and then, it is so simple as:
@@ -40,7 +40,7 @@ In order to start using the bot from the point of view of users, you will need a
 A Telegram bot consists on an automatized software ready to respond according to commands, messages and requests entered by users or other automatized processes. In this sense, SuperHolbie is able to respond to the following commands at the moment:
 
 * `/start`: Shows a welcome message and describes available commands
-* `/project`: Receives a Holberton School project's ID (integer number) as input from user and retrieves information about that project: name, tasks, GitHub directory and GitHub repository. It alerts if the ID entered is not valid and asks for a new one. Additionaly, after retrieving information from a valid project's ID, the user is prompted to enter a tasks's ID (integer number) from that project to retrieve extra information about that task: correction mode and GitHub file. In the same way, if the tasks's ID entered is not valid, the bot asks for a new one.
+* `/project`: Receives a Holberton School project's ID (integer number) as input from user and retrieves information about that project: name, tasks, GitHub directory and GitHub repository. It alerts if the ID entered is not valid and asks for a new one. Additionaly, after retrieving information from a valid project's ID, the user is prompted to optionally enter a tasks's ID (integer number) from that project to retrieve extra information about any of its tasks: correction mode and GitHub file/s. In the same way, if the tasks's ID entered is not valid, the bot asks for a new one.
 
 ### iv. Examples <a name="14"></a>
 

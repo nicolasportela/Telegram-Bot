@@ -133,9 +133,9 @@ def input_text2(update, context):
             chat2.send_message('Project\'s name: {}'.format(projname2))
             taskfile = dic2.get('github_file')
             if taskfile != "":
-                chat2.send_message('GitHub file: {}'.format(taskfile))
+                chat2.send_message('GitHub file/s: {}'.format(taskfile))
             else:
-                chat2.send_message('GitHub file: No file')
+                chat2.send_message('GitHub file/s: No file')
             taskdir = dic2.get('github_dir')
             if taskdir != "":
                 chat2.send_message('GitHub directory: {}'.format(taskdir))
