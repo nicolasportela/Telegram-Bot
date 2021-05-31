@@ -75,6 +75,7 @@ def input_text(update, context):
         chat.send_message('Would you like to get extra info about some of those tasks? If yes, tell me its ID number (available above); otherwise, tell me "end" to end conversation.')
         return INPUT_TEXT2
 
+
 def input_text2(update, context):
     """function 2 to take text given by the user and send feedback"""
     text2 = update.message.text
@@ -152,7 +153,8 @@ if __name__ == '__main__':
 
     dp.add_handler(ConversationHandler(
         entry_points=[CommandHandler('project', project)],
-        states={INPUT_TEXT: [MessageHandler(Filters.text, input_text)]},
+        states={INPUT_TEXT: [MessageHandler(Filters.text, input_text)],
+                INPUT_TEXT2: [MessageHandler(Filters.text, input_text2)]},
         fallbacks=[]
     ))
 
