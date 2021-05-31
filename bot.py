@@ -8,7 +8,7 @@ from telegram.ext import Updater, CommandHandler, ConversationHandler, \
 
 
 INPUT_TEXT = 0
-INPUT_TEXT2 = 0
+INPUT_TEXT2 = 1
 
 
 def start(update, context):
@@ -72,8 +72,13 @@ def input_text(update, context):
             chat.send_message('GitHub repository: {}'.format(projrepo))
         else:
             chat.send_message('GitHub repository: No repository')
-        chat.send_message('Would you like to get extra info about some of those tasks? If yes, tell me its ID number (available above); otherwise, tell me "end" to end conversation.')
-        return INPUT_TEXT2
+        chat.send_message('Would you like to get extra info about some of those tasks?\nIf yes, tell me a task\'s ID number (available above); otherwise, tell me "end" to end conversation.')
+        if text == "end" or text == "End" or text == "END" or text == "EnD" \
+           or text == "eND" or text == "ENd" or text == "eNd" or text == "enD":
+            chat.send_message('See you soon, holbie')
+            return ConversationHandler.END
+        else:
+            return INPUT_TEXT2
 
 
 def input_text2(update, context):
@@ -92,29 +97,30 @@ def input_text2(update, context):
                       headers=header2).json()
     token = r.get('auth_token')
 
-    if text2 == "end" or text2 == "End" or text2 == "END" or text2 == "EnD" \
-       or text2 == "eND" or text2 == "ENd" or text2 == "eNd" or text2 == "enD":
-        chat2.send_message('See you soon, holbie')
-        return ConversationHandler.END
+    url3 = 'https://intranet.hbtn.io/tasks/{}.json?auth_token={}'
+    r3 = requests.get(url3.format(text2, token),
+                      allow_redirects=False,
+                      headers=header2)
+    if r3.status_code != 200:
+        if text2 == "end" or text2 == "End" or text2 == "END" \
+           or text2 == "EnD" or text2 == "eND" or text2 == "ENd" \
+           or text2 == "eNd" or text2 == "enD":
+            chat2.send_message('See you soon, holbie')
+            return ConversationHandler.END
+        else:
+            chat2.send_message('No task found. Please, enter a correct ID or tell me "end" to end conversation.')
     else:
-        url3 = 'https://intranet.hbtn.io/tasks/{}.json?auth_token={}'
-        r3 = requests.get(url3.format(text2, token),
-                          allow_redirects=False,
-                          headers=header2)
-        if r3.status_code != 200:
-            if text2 == "end" or text2 == "End" or text2 == "END" \
-               or text2 == "EnD" or text2 == "eND" or text2 == "ENd" \
-               or text2 == "eNd" or text2 == "enD":
-                chat2.send_message('See you soon, holbie')
-                return ConversationHandler.END
-            else:
-                chat2.send_message('No task found. Please, enter a correct ID or tell me "end" to end conversation.')
+        if text2 == "end" or text2 == "End" or text2 == "END" \
+           or text2 == "EnD" or text2 == "eND" or text2 == "ENd" \
+           or text2 == "eNd" or text2 == "enD":
+            chat2.send_message('See you soon, holbie')
+            return ConversationHandler.END
         else:
             dic2 = r3.json()
             tasktitle2 = dic2.get('title')
             chat2.send_message('Task\'s name: {}'.format(tasktitle2))
             taskchecker = dic2.get('checker_available')
-            if taskchecker == 'true':
+            if taskchecker is True:
                 chat2.send_message('Correction mode: Checker')
             else:
                 chat2.send_message('Correction mode: manual review')
@@ -140,7 +146,7 @@ def input_text2(update, context):
                 chat2.send_message('GitHub repository: {}'.format(taskrepo))
             else:
                 chat2.send_message('GitHub repository: No repository')
-            return ConversationHandler.END
+            chat2.send_message('Any other task?\nIf yes, tell me its ID number (available above); otherwise, tell me "end" to end conversation.')
 
 
 if __name__ == '__main__':
