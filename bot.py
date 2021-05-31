@@ -154,7 +154,7 @@ if __name__ == '__main__':
     dp.add_handler(ConversationHandler(
         entry_points=[CommandHandler('project', project)],
         states={INPUT_TEXT: [MessageHandler(Filters.text, input_text)],
-                INPUT_TEXT2: [MessageHandler(Filters.text2, input_text2)]},
+                INPUT_TEXT2: [MessageHandler(Filters.text, input_text2)]},
         fallbacks=[]
     ))
 
