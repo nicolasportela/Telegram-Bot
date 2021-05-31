@@ -72,19 +72,20 @@ def input_text(update, context):
         else:
             chat.send_message('GitHub repository: No repository')
         chat.send_message('Would you like to get extra info about some of those tasks? If yes, tell me its ID number (available above); otherwise, tell me "end" to end conversation.')
-        if text == "end" or text == "End" or text == "END" or text == "EnD" \
-           or text == "eND" or text == "ENd" or text == "eNd" or text == "enD":
+        text2 = update.message.text
+        if text2 == "end" or text2 == "End" or text2 == "END" or text2 == "EnD" \
+           or text2 == "eND" or text2 == "ENd" or text2 == "eNd" or text2 == "enD":
             chat.send_message('See you soon, holbie')
             return ConversationHandler.END
         else:
             url3 = 'https://intranet.hbtn.io/tasks/{}.json?auth_token={}'
-            r3 = requests.get(url3.format(text, token),
+            r3 = requests.get(url3.format(text2, token),
                               allow_redirects=False,
                               headers=header)
             if r3.status_code != 200:
-                if text == "end" or text == "End" or text == "END" \
-                   or text == "EnD" or text == "eND" or text == "ENd" \
-                   or text == "eNd" or text == "enD":
+                if text2 == "end" or text2 == "End" or text2 == "END" \
+                   or text2 == "EnD" or text2 == "eND" or text2 == "ENd" \
+                   or text2 == "eNd" or text2 == "enD":
                     chat.send_message('See you soon, holbie')
                     return ConversationHandler.END
                 else:
