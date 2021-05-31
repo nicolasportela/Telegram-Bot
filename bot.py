@@ -13,7 +13,7 @@ INPUT_TEXT2 = 0
 
 def start(update, context):
     """start command"""
-    update.message.reply_text('Hey, holbie! So stressful, huh? 😀\nDon\'t worry. Here I am to help you retrieve useful information from the Holberton School Checker API.\n\nAvailable commands at the moment:\n\n/project - retrieves information about any project: name, tasks, GitHub directory and GitHub repository. Optionally, it is possible to get extra information about any of that project tasks: Checker availability and GitHub file.')
+    update.message.reply_text('Hey, holbie! So stressful, huh? 😀\nDon\'t worry. Here I am to help you retrieve useful information from the Holberton School Checker API.\n\nAvailable commands at the moment:\n\n/project - retrieves information about any project: name, tasks, GitHub directory and GitHub repository. Optionally, it is possible to get extra information about any of that project tasks: correction mode and GitHub file.')
 
 
 def project(update, context):
@@ -154,7 +154,7 @@ if __name__ == '__main__':
     dp.add_handler(ConversationHandler(
         entry_points=[CommandHandler('project', project)],
         states={INPUT_TEXT: [MessageHandler(Filters.text, input_text)],
-                INPUT_TEXT2: [MessageHandler(Filters.text, input_text2)]},
+                INPUT_TEXT2: [MessageHandler(Filters.text2, input_text2)]},
         fallbacks=[]
     ))
 
