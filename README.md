@@ -1,6 +1,7 @@
 # SuperHolbie
 
 SuperHolbie is a Telegram bot initially made for the Holberton School "Hack day: Checker challenge!" project. Its purpose is putting into practice some knowledges related to the usage of APIs, through the integration of the Holberton School Checker API to retrieve information related to the program.
+
 It has been entirely developed and written in Linux system and Python language and makes use of the python-telegram-bot library and the Telegram Bot API tools provided by Telegram. SuperHolbie is able to be used in every Telegram platforms (web app, Android, iOS, Mac, Windows, Linux) and has been deployed using the services of Heroku servers.
 
 ### Table of contents
@@ -39,8 +40,10 @@ In order to start using the bot from the point of view of users, you will need a
 ### iii. Usage <a name="13"></a>
 A Telegram bot consists on an automatized software ready to respond according to commands, messages and requests entered by users or other automatized processes. In this sense, SuperHolbie is able to respond to the following commands at the moment:
 
-* `/start`: Shows a welcome message and describes available commands
-* `/project`: Receives a Holberton School project's ID (integer number) as input from user and retrieves information about that project: name, tasks, GitHub directory and GitHub repository. It alerts if the ID entered is not valid and asks for a new one. Additionaly, after retrieving information from a valid project's ID, the user is prompted to optionally enter a tasks's ID (integer number) from that project to retrieve extra information about any of its tasks: correction mode and GitHub file/s. In the same way, if the tasks's ID entered is not valid, the bot asks for a new one.
+* `/start`: Shows a welcome message with a quick summary about SuperHolbie.
+* `/end`: Ends a conversation if there is one running. It stops SuperHolbie from listening and lets you enter a new command.
+* `/help`: Shows extra info about SuperHolbie: demo, source code, documentation and available commands at the moment.
+* `/project`: Receives a Holberton School project's ID (integer number) as input from user and retrieves information about that project: name, tasks, GitHub directory and GitHub repository. It alerts if the ID entered is not valid and asks for a new one. Additionally, after retrieving information from a valid project's ID, the user is prompted to optionally enter a tasks's ID (integer number) from that project to retrieve extra information about any of its tasks: correction mode and GitHub file/s. In the same way, if the tasks's ID entered is not valid, the bot asks for a new one.
 
 ### iv. Examples <a name="14"></a>
 
@@ -52,10 +55,11 @@ A Telegram bot consists on an automatized software ready to respond according to
 
 ## 2. Roadmap <a name="2"></a>
 SuperHolbie is in early stage of development. In this sense, it is planned to develop the following features:
-* Ability to receive undefined number of arguments.
+* Ability to receive variable number of arguments.
 * Inline bot mode implementation.
 * Webhook implementation.
-* Commands which allow to retrieve personal information from the Checker API. 
+* Commands which allow to retrieve personal information from the Checker API.
+* Useful tools for devs.
 
 ## 3. Author and Contributors <a name="3"></a>
 * Author: [Nicolás Portela](https://github.com/nicolasportela)
